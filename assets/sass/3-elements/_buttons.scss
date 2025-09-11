@@ -1,0 +1,59 @@
+.btn-primary,
+.hs-submit .custom-submit-button  {
+	
+	background-color: $colorPrimary;
+	border: 1px solid $colorPrimary;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	height: 40px;
+	min-height: 55px;
+	min-width: 148px;
+	padding-top: 2px;
+	padding-left: 15px;
+	padding-right: 15px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	border-radius: 5px;
+	border-radius: 9999px;
+	cursor: pointer;
+
+	@include transition;
+
+	&:hover {
+		color: $white;
+		background-color: $buttonHover;
+		transform: scale(1.03);
+	}
+}
+
+.btn-white {
+	
+	background-color: $white;
+	border: 1px solid $white;
+	color: #000;
+	font-size: 16px;
+	font-weight: bold;
+	height: 40px;
+	min-height: 55px;
+	min-width: 148px;
+	padding-top: 2px;
+	padding-left: 15px;
+	padding-right: 15px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	border-radius: 5px;
+	border-radius: 9999px;
+	cursor: pointer;
+
+	@include transition;
+
+	&:hover {
+		background-color: $buttonHover4;
+		transform: scale(1.03);
+	}
+}

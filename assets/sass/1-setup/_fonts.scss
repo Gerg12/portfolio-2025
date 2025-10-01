@@ -1,65 +1,28 @@
-.wp-block-cover h1:not(.has-text-color), .wp-block-cover h2:not(.has-text-color), .wp-block-cover h3:not(.has-text-color), .wp-block-cover h4:not(.has-text-color), .wp-block-cover h5:not(.has-text-color), .wp-block-cover h6:not(.has-text-color), .wp-block-cover p:not(.has-text-color), .wp-block-cover-image h1:not(.has-text-color), .wp-block-cover-image h2:not(.has-text-color), .wp-block-cover-image h3:not(.has-text-color), .wp-block-cover-image h4:not(.has-text-color), .wp-block-cover-image h5:not(.has-text-color), .wp-block-cover-image h6:not(.has-text-color), .wp-block-cover-image p:not(.has-text-color) {
-	color: $textColor;
-}
-
-body {
-	font-family: $font1;
-	color: $textColor;
-	font-weight: 300;
-}
-
 h1, h2, h3, h4, h5, h6 {
-	font-family: $font2;
-}
-
-h1 {
-	line-height: 1.3;
-	font-size: 48px;
-	margin-bottom: 1vw;
-	color: $textColor;
-	font-weight: 500;
-	
-	@include tablet-up	{
-		font-size: 56px;
-	}
-}
-
-h2 {
+	font-weight: 800;
+	// color: #ffffff;
 	line-height: 1.2;
-	font-size: 38px;
-	margin-bottom: 1vw;
-	color: $textColor;
-	font-weight: 500;
-	
-	@include tablet-up	{
-		font-size: 44px;
+}
+
+.section-title {
+	font-size: clamp(2rem, 6vw, 2.5rem);
+	margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+	.section-title {
+			 font-size: clamp(2rem, 4vw, 3rem);
 	}
 }
-
-h3 {
-	line-height: 1.2;
-	font-size: 34px;
-	margin-bottom: .8vw;
-	color: $textColor;
-	font-weight: 500;
-	
-	@include tablet-up	{
-		font-size: 44px;
+.section-subtitle p {
+	color: var(--color-text-med);
+	max-width: 40rem;
+	margin: 0 auto 3rem;
+}
+@media (min-width: 768px) {
+	.section-subtitle {
+			margin-bottom: 4rem;
 	}
 }
-
-p + h3 {
-	margin-top: 2vw;
-}
-
-p {
-	color: $textColor;
-}
-
-a {
-	color: $colorSecondary;
-}
-
-.is-root-container .wp-block-post-title h3 {
-	font-size: 36px;
+.bg-offset {
+	background-color: rgba(31, 41, 55, 0.5);
 }

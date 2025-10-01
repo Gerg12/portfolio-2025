@@ -1,59 +1,44 @@
-.btn-primary,
-.hs-submit .custom-submit-button  {
-	
-	background-color: $colorPrimary;
-	border: 1px solid $colorPrimary;
-	color: #fff;
-	font-size: 16px;
-	font-weight: bold;
-	height: 40px;
-	min-height: 55px;
-	min-width: 148px;
-	padding-top: 2px;
-	padding-left: 15px;
-	padding-right: 15px;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
+a {
+	color: var(--color-primary);
 	text-decoration: none;
-	border-radius: 5px;
-	border-radius: 9999px;
-	cursor: pointer;
-
-	@include transition;
-
-	&:hover {
-		color: $white;
-		background-color: $buttonHover;
-		transform: scale(1.03);
-	}
+	transition: color 0.3s ease;
+}
+a:hover {
+	color: var(--color-primary-dark);
 }
 
-.btn-white {
-	
-	background-color: $white;
-	border: 1px solid $white;
-	color: #000;
-	font-size: 16px;
-	font-weight: bold;
-	height: 40px;
-	min-height: 55px;
-	min-width: 148px;
-	padding-top: 2px;
-	padding-left: 15px;
-	padding-right: 15px;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	text-decoration: none;
-	border-radius: 5px;
-	border-radius: 9999px;
+.btn {
+	display: inline-block;
+	padding: 0.75rem 1.5rem; /* Slightly less padding on mobile */
+	border-radius: var(--border-radius-sm);
+	font-weight: 600;
+	text-align: center;
+	transition: all 0.3s ease;
+	border: 1px solid transparent;
 	cursor: pointer;
-
-	@include transition;
-
-	&:hover {
-		background-color: $buttonHover4;
-		transform: scale(1.03);
+}
+@media (min-width: 768px) {
+	.btn {
+			padding: 0.75rem 2rem;
 	}
+}
+/* ... button styles */
+.btn-primary {
+	background-color: var(--color-primary);
+	color: #ffffff;
+	box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+}
+.btn-primary:hover {
+	background-color: var(--color-primary-dark);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+.btn-secondary {
+	background-color: transparent;
+	color: var(--color-text-light);
+	border-color: var(--color-dark-border);
+}
+.btn-secondary:hover {
+	background-color: var(--color-dark-card);
+	border-color: var(--color-text-med);
 }

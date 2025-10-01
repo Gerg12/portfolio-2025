@@ -17,7 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	
 	<!-- Add Lottie Player library -->
@@ -40,85 +40,41 @@
 				</div>
 		</div>
 	<?php endif; ?>
-
-	<header id="masthead" class="site-header side-gutter">
+	<!-- Header & Navigation -->
+	<header id="masthead" class="site-header">
 		<div class="container">
-			<div class="site-header__inner">
-				<div class="site-branding">
-					<a href="/" class="custom-logo-link" rel="home" aria-current="page">
-						<?php
-						if (has_custom_logo()) {
-							the_custom_logo();
-						} else {
-						?>
-							<h2 class="logo-title">
-								<?php echo get_bloginfo(); ?>
-							</h2>
-							<h3 class="logo-subtitle">
-								<?php echo get_bloginfo('description'); ?>
-							</h3>
-						<?php
-						}
-						?>
-					</a>
-				</div>
-				<nav id="site-navigation" class="main-navigation">
-					<button class="menu-toggle site-header__nav-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
-					<?php
-					wp_nav_menu(
-						array(
-							'menu' => 'Main Menu',
-							'menu_id'        => 'main-menu',
-						)
-					);
-					?>
+				<nav aria-label="Main navigation">
+						<a href="#" class="logo" aria-label="Homepage">dev<span class="text-primary">greg</span>.com</a>
+						<div id="main-menu">
+							<?php
+								wp_nav_menu(
+									array(
+										'menu' => 'Main Menu',
+									)
+								);
+							?>
+							<a href="#contact" class="nav-contact-button btn btn-primary">Contact Me</a>
+						</div>
+						<button class="mobile-menu-button" id="mobile-menu-button" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
+									<svg aria-hidden="true" class="w-6 h-6" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+						</button>
 				</nav>
-				<div class="menu-btn-box">
-					<?php if (class_exists('WooCommerce')) : ?>
-						<a href="<?php echo wc_get_cart_url(); ?>" class="cart-icon-link">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-								<circle cx="9" cy="21" r="1"></circle>
-								<circle cx="20" cy="21" r="1"></circle>
-								<path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-							</svg>
-							<span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-						</a>
-					<?php endif; ?>
-					<a class="menu-btn" href="/request-a-demo/">
-						Let's Talk
-					</a>
-				</div>
-				<a href="#open-menu" class="mobile-menu__button">
-					<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 32" width="32px" height="32px"><path d="M 4 7 L 4 9 L 28 9 L 28 7 Z M 4 15 L 4 17 L 28 17 L 28 15 Z M 4 23 L 4 25 L 28 25 L 28 23 Z"/></svg>
-				</a>
-				
-			</div>
 		</div>
-	</header>
-
-	<?php //overlay-active ?>
-	<button class="mobile-menu-overlay"></button>
-	<?php //menu-open ?>
-	<div id="mobile-menu" class="mobile-menu">
-		<div class="mobile-menu__inner">
-			<div class="mobile-menu__header">
-				<div class="mobile-menu__header-buttons">
-					<button class="close-button" type="button">
-						<span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="close-icon"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-						</span>
-					</button>
-				</div>
-			</div>
-			<div class="mobile-menu__content side-gutter">
-				<?php
+		<!-- <ul class="mobile-menu list-reset is-active" id="mobile-menu">
+				<li><a href="#services">Services</a></li>
+				<li><a href="#portfolio">Work</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Contact Me</a></li>
+		</ul> -->
+		<?php
 					wp_nav_menu(
 						array(
 							'theme_location'  => 'mobile-menu',
 							'container_class' => 'mobile-menu',
+							'menu_class'      => 'mobile-menu list-reset',
+							'menu_id'         => 'mobile-menu'
 						)
 					);
 				?>
-			</div>
-		</div>
-	</div>
+				<a href="#contact" class="mobile-contact-button btn btn-primary" style="margin-top: 1rem; width: 100%;">Contact Me</a>
+	</header>

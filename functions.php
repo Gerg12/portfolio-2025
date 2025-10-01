@@ -147,6 +147,7 @@ function hpm_theme_scripts() {
 
 	wp_enqueue_script('select2', get_template_directory_uri() . '/dist/js/select2.min.js', array('jquery'), '4.1.0-rc.0', true);
 	wp_enqueue_script( 'slick-scripts', get_template_directory_uri() . '/dist/js/slick.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'aos-scripts', get_template_directory_uri() . '/dist/js/aos.js', array(), _S_VERSION, true );
 
 	wp_enqueue_script( 'hpm-theme-scripts', get_template_directory_uri() . '/dist/js/scripts.js', array(), _S_VERSION, true );
 
@@ -242,6 +243,38 @@ function my_acf_init_block_types() {
 			'icon'              => 'columns',
 			'mode'              => 'edit',
 			'keywords'          => array( 'blog', 'list' ),
+		));
+
+		// register a Graphic Block block.
+		acf_register_block_type(array(
+			'name'              => 'graphic-block',
+			'title'             => __('Graphic Block block'),
+			'description'       => __('A Graphic Block block.'),
+			'render_template'   => 'template-parts/blocks/graphic-block.php',
+		));
+
+		// register a Service Block block.
+		acf_register_block_type(array(
+			'name'              => 'service-block',
+			'title'             => __('Service Block block'),
+			'description'       => __('A Service Block block.'),
+			'render_template'   => 'template-parts/blocks/service-block.php',
+		));
+
+		// register a Portfolio Block block.
+		acf_register_block_type(array(
+			'name'              => 'portfolio-block',
+			'title'             => __('Portfolio Block block'),
+			'description'       => __('A Portfolio Block block.'),
+			'render_template'   => 'template-parts/blocks/portfolio-block.php',
+		));
+
+		// register a Alternating Sections block.
+		acf_register_block_type(array(
+			'name'              => 'alternating-sections',
+			'title'             => __('Alternating Sections block'),
+			'description'       => __('A Alternating Sections block.'),
+			'render_template'   => 'template-parts/blocks/alternating-sections.php',
 		));
 	}
 }

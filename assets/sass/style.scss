@@ -6,6 +6,7 @@
 @import '2-tools/utilities';
 @import './2-tools/slick/slick-theme';
 @import './2-tools/slick/slick';
+@import './2-tools/aos/aos';
 
 @import './3-elements/buttons';
 @import './3-elements/icons';
@@ -14,6 +15,9 @@
 @import './5-blocks/flex-cards';
 @import './5-blocks/alternating-sections';
 @import './5-blocks/hero-slider';
+@import './5-blocks/graphic-block';
+@import './5-blocks/service-block';
+@import './5-blocks/portfolio-block';
 
 @import './6-layouts/header';
 @import './6-layouts/footer';

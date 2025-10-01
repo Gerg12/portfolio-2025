@@ -19,14 +19,21 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /**
 * Font smoothing.
 */
 body {
-  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-primary);
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-light);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-	margin: 0;
-	overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
 }
 
 /**

@@ -1,4 +1,20 @@
 jQuery(document).ready(function($) {
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        once: false,
+    });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenu.classList.toggle('is-active');
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+    });
+
+
 	console.log('ready2');
 	$('.calendar-button a').click(function(event) {
      // Prevent the default behavior of the link
@@ -119,30 +135,4 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Add scroll event listener
   window.addEventListener('scroll', handleScroll);
-});
-
-// Update cart count
-function updateCartCount() {
-    if (typeof wc_cart_fragments_params === 'undefined') {
-        return;
-    }
-
-    jQuery(document.body).on('added_to_cart removed_from_cart', function() {
-        jQuery.ajax({
-            url: wc_cart_fragments_params.wc_ajax_url.toString().replace('%%endpoint%%', 'get_refreshed_fragments'),
-            type: 'POST',
-            success: function(data) {
-                if (data && data.fragments) {
-                    jQuery.each(data.fragments, function(key, value) {
-                        jQuery(key).replaceWith(value);
-                    });
-                }
-            }
-        });
-    });
-}
-
-// Initialize cart count updates
-jQuery(document).ready(function($) {
-    updateCartCount();
 });

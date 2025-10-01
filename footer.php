@@ -13,7 +13,7 @@
 
 	<footer id="colophon" class="site-footer" >
 		<div class="container">
-			<div class="site-footer__inner">
+			<div class="site-footer__inner" style="display: none;">
 				<div class="site-footer__column site-footer__column-1 footer-logo__column">
 					<a href="/" class="custom-logo-link" rel="home" aria-current="page">
 						<?php

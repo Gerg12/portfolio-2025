@@ -71,7 +71,7 @@
 	}
 }
 
-.mobile-menu ul {
+.mobile-menu {
 	display: none;
 	padding: 0 1.5rem 1rem;
 	@include reset-list;
@@ -83,15 +83,16 @@
 	}
 }
 
-.mobile-menu.is-active ul {
+.mobile-menu.is-active {
 	display: block;
 }
 
 .mobile-contact-button {
 	display: none;
 	margin-bottom: 20px;
+	max-width: 250px;
 }
 
-.is-active + .mobile-contact-button {
+.show-button.mobile-contact-button {
 	display: block;
 }

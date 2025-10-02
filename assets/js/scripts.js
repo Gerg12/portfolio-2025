@@ -1,17 +1,62 @@
 jQuery(document).ready(function($) {
+
+    
+
+    
     // Initialize AOS
     AOS.init({
         duration: 800,
         once: false,
     });
 
+    // Handle smooth scrolling with header offset for anchor links
+    $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                // Close mobile menu if this anchor link is within the mobile menu
+                if ($(this).closest('#mobile-menu').length > 0) {
+                    closeMobileMenu();
+                }
+                
+                // Calculate header height for offset
+                var headerHeight = $('.site-header').outerHeight() || 60;
+                var targetOffset = target.offset().top - headerHeight - 20; // 20px extra padding
+                
+                $('html, body').animate({
+                    scrollTop: targetOffset
+                }, 800, 'swing');
+                return false;
+            }
+        }
+    });
+
     // Mobile menu toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileContactButton = document.querySelector('.mobile-contact-button');
+    
+    // Function to close mobile menu
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('is-active');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+        
+        // Hide mobile contact button
+        if (mobileContactButton) {
+            mobileContactButton.classList.remove('show-button');
+        }
+    }
+    
     mobileMenuButton.addEventListener('click', () => {
         const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
         mobileMenu.classList.toggle('is-active');
         mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        
+        // Show/hide mobile contact button with mobile menu
+        if (mobileContactButton) {
+            mobileContactButton.classList.toggle('show-button');
+        }
     });
 
 
@@ -62,6 +107,13 @@ jQuery(document).ready(function($) {
 	});
 	$('.close-button, .mobile-menu-overlay, .mobile-menu-bg-overlay').click(function(e) {
 		e.preventDefault();
+		$('.mobile-menu-overlay').removeClass('overlay-active');
+		$('.mobile-menu').removeClass('menu-open');
+        $('html').removeClass('menu-open');
+	});
+
+	// Close mobile menu when anchor links within mobile menu are clicked (alternative implementation)
+	$('.mobile-menu a[href*="#"]:not([href="#"])').click(function() {
 		$('.mobile-menu-overlay').removeClass('overlay-active');
 		$('.mobile-menu').removeClass('menu-open');
         $('html').removeClass('menu-open');

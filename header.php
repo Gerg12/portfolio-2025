@@ -44,7 +44,7 @@
 	<header id="masthead" class="site-header">
 		<div class="container">
 				<nav aria-label="Main navigation">
-						<a href="#" class="logo" aria-label="Homepage">dev<span class="text-primary">greg</span>.com</a>
+						<a href="/" class="logo" aria-label="Homepage">dev<span class="text-primary">greg</span>.com</a>
 						<div id="main-menu">
 							<?php
 								wp_nav_menu(
@@ -53,7 +53,7 @@
 									)
 								);
 							?>
-							<a href="#contact" class="nav-contact-button btn btn-primary">Contact Me</a>
+							<a href="mailto:thegregoryjohnson@gmail.com" target="_blank" class="nav-contact-button btn btn-primary">Contact Me</a>
 						</div>
 						<button class="mobile-menu-button" id="mobile-menu-button" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
 									<svg aria-hidden="true" class="w-6 h-6" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -70,11 +70,10 @@
 					wp_nav_menu(
 						array(
 							'theme_location'  => 'mobile-menu',
-							'container_class' => 'mobile-menu',
 							'menu_class'      => 'mobile-menu list-reset',
 							'menu_id'         => 'mobile-menu'
 						)
 					);
 				?>
-				<a href="#contact" class="mobile-contact-button btn btn-primary" style="margin-top: 1rem; width: 100%;">Contact Me</a>
+				<a href="mailto:thegregoryjohnson@gmail.com" target="_blank" class="mobile-contact-button btn btn-primary" style="margin-top: 1rem; width: 100%;">Contact Me</a>
 	</header>

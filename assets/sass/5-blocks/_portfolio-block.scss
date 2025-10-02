@@ -1,5 +1,9 @@
 .portfolio-block-section {
   background-color: #111827;
+
+  @include tablet-up {
+    padding-bottom: 50px;
+  }
 }
 
 /* Portfolio Grid */

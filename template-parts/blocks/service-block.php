@@ -9,13 +9,7 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-if( !empty($block['id']) ) {
-  $id = 'service-block-' . $block['id'];
-}
-else {
-  $id = 'service-block';
-  $block = 'not-block';
-}
+$id = 'service-block-' . $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }

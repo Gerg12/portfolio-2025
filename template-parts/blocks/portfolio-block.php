@@ -9,13 +9,7 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-if( !empty($block['id']) ) {
-  $id = 'portfolio-block-' . $block['id'];
-}
-else {
-  $id = 'portfolio-block';
-  $block = 'not-block';
-}
+$id = 'portfolio-block-' . $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
@@ -47,7 +41,7 @@ $portfolio_repeater = get_field('portfolio_repeater');
         <?php if($portfolio_repeater): ?>
             <div class="grid grid-cols-2">
                 <?php foreach($portfolio_repeater as $index => $portfolio_item): ?>
-                    <a href="#" class="portfolio-item" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
+                    <a href="<?php echo esc_url(isset($portfolio_item['portfolio_repeater_link']['url']) ? $portfolio_item['portfolio_repeater_link']['url'] : '#'); ?>" class="portfolio-item" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
                         <?php if($portfolio_item['portfolio_repeater_image']): ?>
                             <img src="<?php echo esc_url($portfolio_item['portfolio_repeater_image']['url']); ?>" alt="<?php echo esc_attr($portfolio_item['portfolio_repeater_image']['alt']); ?>">
                         <?php endif; ?>

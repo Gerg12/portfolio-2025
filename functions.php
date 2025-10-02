@@ -259,6 +259,13 @@ function my_acf_init_block_types() {
 			'title'             => __('Service Block block'),
 			'description'       => __('A Service Block block.'),
 			'render_template'   => 'template-parts/blocks/service-block.php',
+			'category'          => 'layout',
+			'icon'              => 'admin-tools',
+			'mode'              => 'edit',
+			'keywords'          => array( 'service', 'block' ),
+			'supports'          => array(
+				'anchor' => true,
+			),
 		));
 
 		// register a Portfolio Block block.
@@ -267,6 +274,13 @@ function my_acf_init_block_types() {
 			'title'             => __('Portfolio Block block'),
 			'description'       => __('A Portfolio Block block.'),
 			'render_template'   => 'template-parts/blocks/portfolio-block.php',
+			'category'          => 'layout',
+			'icon'              => 'portfolio',
+			'mode'              => 'edit',
+			'keywords'          => array( 'portfolio', 'block' ),
+			'supports'          => array(
+				'anchor' => true,
+			),
 		));
 
 		// register a Alternating Sections block.
@@ -275,6 +289,13 @@ function my_acf_init_block_types() {
 			'title'             => __('Alternating Sections block'),
 			'description'       => __('A Alternating Sections block.'),
 			'render_template'   => 'template-parts/blocks/alternating-sections.php',
+			'category'          => 'layout',
+			'icon'              => 'columns',
+			'mode'              => 'edit',
+			'keywords'          => array( 'alternating', 'sections' ),
+			'supports'          => array(
+				'anchor' => true,
+			),
 		));
 	}
 }

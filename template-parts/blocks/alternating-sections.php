@@ -9,13 +9,7 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-if( !empty($block['id']) ) {
-  $id = 'alternating-sections-' . $block['id'];
-}
-else {
-  $id = 'alternating-sections';
-  $block = 'not-block';
-}
+$id = 'alternating-sections-' . $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
@@ -51,7 +45,7 @@ $alternating_sections_subtitle = get_field('alternating_sections_subtitle');
       endif;?>
       <div class="alternating-section-item ">
         <div class="text-container">
-          <div class="text-container-inner">
+          <div class="text-container-inner" data-aos="fade-up">
             <?php if(get_sub_field('alternating_sections_icon')): ?>
               <img class="alternating-icon-image" src="<?php echo get_sub_field('alternating_sections_icon'); ?>" alt="Helo Icon">
             <?php endif; ?>
